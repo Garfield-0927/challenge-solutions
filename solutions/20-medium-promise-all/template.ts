@@ -16,5 +16,3 @@ type TestType<T = []> = T extends [...infer P]
 			[k in keyof P]: P[k] extends Promise<infer Q> ? Q : P[k];
 	  }
 	: [];
-
-let a: TestType<Readonly<[1, 2, Promise<3>]>>;
